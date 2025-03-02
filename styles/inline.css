@@ -1,0 +1,40 @@
+.layer {
+    padding: 20px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    width: 200px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    color: darkgoldenrod;
+    border: solid darkgoldenrod 1px;
+    margin: -50px 0 0 -50px;
+    text-align: center;
+}
+
+body {
+    background: rgb(48, 48, 48);
+}
+
+#la2,
+#la4 {
+    font-size: 35px;
+}
+
+#la1,
+#la3 {
+    font-size: 30px;
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 35px;
+    }
+    header p {
+        font-size: 16px;
+    }
+    .pads {
+        margin-bottom: 100px;
+    }
+}
