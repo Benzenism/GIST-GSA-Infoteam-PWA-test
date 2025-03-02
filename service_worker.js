@@ -1,9 +1,9 @@
 const sCacheName = 'hello-pwa'; // 캐시제목 선언
 const aFilesToCache = [ // 캐시할 파일 선언
-  './',
-  './index.html',
-  './manifest.json',
-  './images/hello-pwa.png'
+  'https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/',
+  'https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/index.html',
+  'https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/manifest.json',
+  'https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/images/hello-pwa.png'
 ];
 
 // 2.서비스워커를 설치하고 캐시를 저장함

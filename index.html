@@ -40,14 +40,14 @@
 <body>
   <div class="container">
     <h1>안녕하세요!</h1>
-    <img src="./images/hello-pwa.png" alt=""></img>
+    <img src="https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/images/hello-pwa.png" alt=""></img>
     <p>by JS</p>
   </div>
   <!-- 1. 서비스 워커 등록 -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('./service_worker.js')
+        .register('https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/service_worker.js')
         .then(function () {
           console.log('서비스 워커가 등록됨!');
         })

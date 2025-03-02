@@ -3,7 +3,7 @@
     "short_name": "PWA by JS",
     "description": "PWA start program",
     "scope": ".",
-    "start_url": "./",
+    "start_url": "https://benzenism.github.io/GIST-GSA-Infoteam-PWA-test/",
     "display": "fullscreen",
     "orientation": "portrait",
     "theme_color": "#ffffff",
