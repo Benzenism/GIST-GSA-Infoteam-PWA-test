@@ -3,10 +3,13 @@ const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
   './manifest.json',
+  './app.js',
+  './style.css',
+  './images',
   './images/hello-pwa.png'
 ];
 
-// 2.서비스워커를 설치하고 캐시를 저장함
+// 서비스워커 설치 및 캐시 저장
 self.addEventListener('install', pEvent => {
   console.log('서비스워커 설치함!');
   pEvent.waitUntil(
@@ -18,12 +21,12 @@ self.addEventListener('install', pEvent => {
   );
 });
 
-// 3. 고유번호 할당받은 서비스 워커 동작 시작
+// 고유번호 할당받은 서비스 워커 동작 시작
 self.addEventListener('activate', pEvent => {
   console.log('서비스워커 동작 시작됨!');
 });
 
-// 4.데이터 요청시 네트워크 또는 캐시에서 찾아 반환 
+// 데이터 요청시 네트워크 또는 캐시에서 찾아 반환 
 self.addEventListener('fetch', pEvent => {
   pEvent.respondWith(
     caches.match(pEvent.request)
