@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
 
-  <title>안녕하세요! PWA by JS</title>
+  <title>Hello, GIST PWA!</title>
   <style>
     html,
     body {
@@ -32,7 +32,7 @@
 
 <body>
   <div class="container">
-    <h1>안녕하세요!</h1>
+    <h1>Hello!</h1>
     <img src="./images/hello-pwa.png" alt=""></img>
     <p>by JS</p>
   </div>
@@ -41,7 +41,7 @@
       navigator.serviceWorker
         .register('./service_worker.js')
         .then(function () {
-          console.log('서비스 워커가 등록됨!');
+          console.log('Service Worker Registed');
         })
     }
   </script>
