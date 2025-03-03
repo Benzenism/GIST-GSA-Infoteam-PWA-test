@@ -5,8 +5,7 @@ const urlsToCache = [ // 캐시할 파일 선언
   './manifest.json',
   './app.js',
   './style.css',
-  './images',
-  './images/hello-pwa.png'
+  './images'
 ];
 
 // 서비스워커 설치 및 캐시 저장
