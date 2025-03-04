@@ -2,7 +2,6 @@ const sCacheName = 'hello-pwa'; // 캐시제목 선언
 const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
-  './manifest.json',
   './app.js',
   './style.css',
   './images'
