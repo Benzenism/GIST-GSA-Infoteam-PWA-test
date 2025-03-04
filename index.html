@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+
+  <title>Hello, GIST PWA!</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello!</h1>   
+    <img src="./images/hello-pwa.png" alt="app main logo" height="100" width="100"></img>
+    <p>by Kim Doh-kyun(GIST 25)</p>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('./service-worker.js')
+        .then(function () {
+          console.log('Service Worker Registed');
+        })
+    }
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
