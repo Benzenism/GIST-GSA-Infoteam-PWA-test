@@ -32,8 +32,6 @@ header {
   background-color: var(--primary-color);
   color: #fff;
   padding: 1rem;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   position: fixed;
   top: 0;
