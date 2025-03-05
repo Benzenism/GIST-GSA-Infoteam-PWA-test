@@ -13,10 +13,10 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1rem;
   color: var(--text-color);
   background-color: var(--background-color);
-  padding-top: 1rem;
+  padding-top: 2rem;
 }
 
 .container {
