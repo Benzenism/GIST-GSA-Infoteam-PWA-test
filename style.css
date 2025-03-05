@@ -40,6 +40,19 @@ header {
 	z-index: 100;
 }
 
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	color: #fff;
+	background-color: #001F3F;
+	padding: 1rem;
+	border-top: 1px solid #ccc;
+	width: 100%;
+}
+
 h1 {
   font-size: 2rem;
 }
