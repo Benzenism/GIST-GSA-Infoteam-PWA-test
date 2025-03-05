@@ -1,6 +1,6 @@
 :root {
   --primary-color: #000000;
-  --secondary-color: #ff0c0c;
+  --secondary-color: #818181;
   --text-color: #333;
   --background-color: #000000;
 }
@@ -13,7 +13,7 @@
 
 html {
   overscroll-behavior: none;
-  
+
   min-height: calc(100% + env(safe-area-inset-top));
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
