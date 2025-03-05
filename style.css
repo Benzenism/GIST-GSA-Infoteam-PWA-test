@@ -15,6 +15,13 @@ html {
   overscroll-behavior: none;
 }
 
+.element {
+  height: env(safe-area-inset-top);
+  width: env(safe-area-inset-left);
+  margin: env(safe-area-inset-right);
+  padding: env(safe-area-inset-bottom, 20px);
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1rem;
@@ -55,7 +62,7 @@ footer {
 	text-align: center;
 	color: #fff;
 	background-color: #001F3F;
-	padding: 1.5rem;
+	padding: 1rem;
 	border-top: 1px solid #ccc;
 	width: 100%;
 }
