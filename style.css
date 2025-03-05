@@ -13,7 +13,11 @@
 
 html {
   overscroll-behavior: none;
+  
+  min-height: calc(100% + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
+
 
 body {
   font-family: Arial, sans-serif;
@@ -31,7 +35,7 @@ body {
   justify-content: center;
   text-align: center;
   max-width: 1000px;
-  margin: 0;
+  margin: 0 auto;
   padding: 1rem;
   background: #ffffff;
 }
@@ -43,7 +47,7 @@ header {
   text-align: center;
   position: fixed;
   top: 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ffffff;
   width: 100%;
 	z-index: 100;
 }
@@ -57,7 +61,7 @@ footer {
 	color: #fff;
 	background-color: var(--primary-color);
 	padding: 1rem;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #ffffff;
 	width: 100%;
 }
 
