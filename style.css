@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1rem;
