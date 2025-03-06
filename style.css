@@ -30,7 +30,6 @@ body {
   line-height: 1rem;
   color: var(--text-color);
   background-color: var(--background-color);
-  margin-top: 2rem;
 }
 
 .container {
@@ -44,6 +43,7 @@ body {
   margin: 0 auto;
   padding: 1rem;
   background: #ffffff;
+  margin-top: 2rem;
 }
 
 header {
