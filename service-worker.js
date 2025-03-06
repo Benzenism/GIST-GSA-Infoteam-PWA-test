@@ -1,4 +1,4 @@
-const sCacheName = 'hello-pwa-v2'; // 캐시의 제목과 버전 선언
+const sCacheName = 'hello-pwa-v1'; // 캐시의 제목과 버전 선언
 const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
@@ -41,49 +41,26 @@ self.addEventListener('fetch', pEvent => {
   pEvent.respondWith(
     caches.match(pEvent.request)
     .then(response => {
-      if (!response) {
-        console.log("Data Request from Network", pEvent.request);
-        return fetch(pEvent.request).then(networkResponse => {
-          // 네트워크 응답을 캐시에 저장
-          return caches.open(sCacheName).then(cache => {
-            cache.put(pEvent.request, networkResponse.clone());
-            return networkResponse;
-          });
-        });
+      if (response) {
+        return response;
       }
-      console.log("Data Request from Cache", pEvent.request);
-      return response;
-    }).catch(err => console.log(err))
+      return fetch(pEvent.request).then(fetchResponse => {
+        if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
+          return fetchResponse;
+        }
+        const responseToCache = fetchResponse.clone();
+        caches.open(sCacheName).then(cache => {
+          cache.put(pEvent.request, responseToCache);
+        });
+        return fetchResponse;
+      });
+    })
   );
 });
 
-// 자동 업데이트 기능
+// 업데이트 요청 이벤트
 self.addEventListener('message', event => {
   if (event.data === 'skipWaiting') {
     self.skipWaiting();
   }
 });
-
-// 클라이언트 코드
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then(registration => {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      
-      registration.addEventListener('updatefound', () => {
-        const newWorker = registration.installing;
-        newWorker.addEventListener('statechange', () => {
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            // 새 버전이 설치됨
-            if (confirm('새 버전이 사용 가능합니다. 업데이트하시겠습니까?')) {
-              newWorker.postMessage('skipWaiting');
-              window.location.reload();
-            }
-          }
-        });
-      });
-    }).catch(err => {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
