@@ -24,7 +24,6 @@ html {
   overscroll-behavior: none;
 }
 
-
 body {
   font-family: Arial, sans-serif;
   line-height: 1rem;
@@ -34,7 +33,7 @@ body {
 }
 
 .container {
-  height: 50%;
+  height: 50vp;
   width: 100%;
   max-width: 4000px;
   display: flex;
