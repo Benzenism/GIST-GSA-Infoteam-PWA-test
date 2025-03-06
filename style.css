@@ -49,7 +49,7 @@ body {
 header {
   background-color: var(--primary-color);
   color: #fff;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   position: fixed;
   top: 0;
@@ -66,7 +66,7 @@ footer {
 	text-align: center;
 	color: #fff;
 	background-color: var(--primary-color);
-	padding: 1rem;
+	padding: 2rem;
 	border-top: 1px solid #ffffff;
 	width: 100%;
 }

@@ -38,11 +38,3 @@ self.addEventListener('fetch', pEvent => {
     }).catch(err => console.log(err))
   );
 });
-
-function isIphone() {
-  return /iPhone/.test(navigator.userAgent) && !window.MSStream;
-}
-
-if (isIphone()) {
-  document.querySelector('footer').style.paddingBottom = '2rem';
-}
