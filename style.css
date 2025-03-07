@@ -44,6 +44,8 @@ body {
   padding: 1rem;
   background: #ffffff;
   margin-top: 2rem;
+  position: absolute;
+  top: 50%;
 }
 
 header {
