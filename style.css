@@ -36,7 +36,8 @@ body {
   height: 50vh;
   width: 100%;
   max-width: 4000px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -44,8 +45,6 @@ body {
   padding: 1rem;
   background: #ffffff;
   margin-top: 2rem;
-  position: absolute;
-  top: 50%;
 }
 
 header {
