@@ -1,4 +1,4 @@
-const sCacheName = 'hello-pwa-v0'; // 캐시의 제목과 버전 선언
+const sCacheName = 'hello-pwa-v2'; // 캐시의 제목과 버전 선언
 const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
@@ -36,31 +36,32 @@ self.addEventListener('activate', pEvent => {
   );
 });
 
-// 데이터 요청시 네트워크 또는 캐시에서 찾아 반환 
+// 데이터 요청시 네트워크 또는 캐시에서 찾아 반환
 self.addEventListener('fetch', pEvent => {
   pEvent.respondWith(
     caches.match(pEvent.request)
     .then(response => {
       if (response) {
+        console.log("Data Request from Cache", pEvent.request);
         return response;
       }
-      return fetch(pEvent.request).then(fetchResponse => {
-        if (!fetchResponse || fetchResponse.status !== 200 || fetchResponse.type !== 'basic') {
-          return fetchResponse;
+      console.log("Data Request from Network", pEvent.request);
+      return fetch(pEvent.request).then(networkResponse => {
+        if (networkResponse.ok) {
+          const cacheResponse = networkResponse.clone();
+          caches.open(sCacheName).then(cache => {
+            cache.put(pEvent.request, cacheResponse);
+          });
         }
-        const responseToCache = fetchResponse.clone();
-        caches.open(sCacheName).then(cache => {
-          cache.put(pEvent.request, responseToCache);
-        });
-        return fetchResponse;
+        return networkResponse;
       });
-    })
+    }).catch(err => console.log(err))
   );
 });
 
 // 업데이트 요청 이벤트
 self.addEventListener('message', event => {
-  if (event.data === 'skipWaiting') {
+  if (event.data === 'SKIP_WAITING') {
     self.skipWaiting();
   }
 });
