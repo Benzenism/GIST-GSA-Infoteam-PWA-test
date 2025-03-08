@@ -33,7 +33,7 @@ body {
 }
 
 .container {
-  height: 50vh;
+  height: 80vh;
   width: 100%;
   max-width: 4000px;
   display: flex;
