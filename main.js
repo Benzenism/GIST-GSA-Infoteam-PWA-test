@@ -62,7 +62,7 @@ function selectRestaurant(dist1, dist2){
 
         const randomValue = Math.random(); // 소숫점 관련 오류는 무시
         if (randomValue <= weight1 / weightSum) {
-            console.log(`선택된 지점: 락락, 거리: ${dist} m`);
+            console.log(`선택된 지점: 락락, 거리: ${dist1} m`);
             textElement.innerText = `락락(제 1학생회관 2층), 거리: ${dist1.toFixed(1)} m`;
         } else if (randomValue <= (weight1 + weight2) / weightSum) {
             console.log(`선택된 지점: 1학, 거리: ${dist1} m`);
