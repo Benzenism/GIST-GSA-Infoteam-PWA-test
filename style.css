@@ -1,6 +1,6 @@
 :root {
   --primary-color: #000000;
-  --secondary-color: #818181;
+  --secondary-color: #434343;
   --text-color: #333;
   --background-color: #000000;
 }
@@ -100,7 +100,7 @@ main {
 }
 
 .button:hover {
-  background-color: #34495e;
+  background-color: #272727;
 }
 
 @media (max-width: 768px) {

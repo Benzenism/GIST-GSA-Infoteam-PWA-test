@@ -1,7 +1,7 @@
 {
-  "name": "Hello, PWA!",
-  "short_name": "PWA Test",
-  "description": "PWA Test Program",
+  "name": "GIST Food Big-Brother",
+  "short_name": "GIST Big-Brother",
+  "description": "Big-Brother Will Help You",
   "scope": ".",
   "start_url": "./",
   "display": "standalone",

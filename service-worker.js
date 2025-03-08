@@ -1,4 +1,4 @@
-const sCacheName = 'hello-pwa-v2'; // 캐시의 제목과 버전 선언
+const sCacheName = 'hello-pwa-v0'; // 캐시의 제목과 버전 선언
 const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
