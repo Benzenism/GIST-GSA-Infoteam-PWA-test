@@ -3,6 +3,7 @@ const urlsToCache = [ // 캐시할 파일 선언
   './',
   './index.html',
   './app.js',
+  './main.js',
   './style.css',
   './images'
 ];
