@@ -43,4 +43,32 @@ function calculateDistance(userLat, userLon) {
 
     console.log(`1학까지의 거리: ${distanceTo1} m`);
     console.log(`2학까지의 거리: ${distanceTo2} m`);
+
+    selectRestaurant(distanceTo1, distanceTo2)
+}
+
+// 식사할 장소 대리 선정
+function selectRestaurant(dist1, dist2){
+    if (distanceTo1 > 1000 || distanceTo2 > 1000) {
+        console.log('Too Far!');
+    } else {
+        const weight1 = 1 - (distanceTo1 * 0.001) + 0.3; // 락락
+        const weight2 = 1 - (distanceTo1 * 0.001) + 0.2; // 1학
+        const weight3 = 1 - (distanceTo2 * 0.001) + 0.1; // 2학
+        const weightSum = weight1 + weight2 + weight3
+
+        const textElement = document.getElementById('randomResult');
+
+        const randomValue = Math.random(); // 소숫점 관련 오류는 무시
+        if (randomValue <= weight1 / weightSum) {
+            console.log(`선택된 지점: 락락, 거리: ${distanceTo1} m`);
+            textElement.innerText = `선택된 지점: 락락(제 1학생회관 2층), 거리: ${distanceTo1.toFixed(1)} m`;
+        } else if (randomValue <= (weight1 + weight2) / weightSum) {
+            console.log(`선택된 지점: 1학, 거리: ${distanceTo1} m`);
+            textElement.innerText = `선택된 지점: 제 1학생회관, 거리: ${distanceTo1.toFixed(1)} m`;
+        } else {
+            console.log(`선택된 지점: 2학, 거리: ${distanceTo2} m`);
+            textElement.innerText = `선택된 지점: 제 2학생회관, 거리: ${distanceTo2.toFixed(1)} m`;
+        }
+    }
 }
