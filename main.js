@@ -1,4 +1,4 @@
-// 사용자의 위치를 얻기
+// 사용자의 위치 얻기
 function getUserLocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -18,8 +18,8 @@ document.getElementById('getLocationButton').addEventListener('click', getUserLo
 
 // Haversine 공식으로 두 지점 간의 거리 계산
 function calculateDistance(userLat, userLon) {
-    const point1 = { lat: 37.7749, lon: -122.4194 }; // 제 1 학생회관, 락락
-    const point2 = { lat: 34.0522, lon: -118.2437 }; // 제 2 학생회관
+    const point1 = { lat: 35.228798, lon: 126.839371 }; // 제 1 학생회관, 락락
+    const point2 = { lat: 35.229750, lon: 126.845983 }; // 제 2 학생회관
 
     function degreesToRadians(degrees) {
         return degrees * Math.PI / 180;
